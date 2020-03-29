@@ -1,6 +1,6 @@
-gspread
-oauth2client
-beautifulsoup4
-html5lib
-requests
-python-dotenv
+gspread==3.3.0
+oauth2client==4.1.3
+beautifulsoup4==4.8.2
+html5lib==1.0.1
+requests==2.23.0
+python-dotenv==0.12.0
