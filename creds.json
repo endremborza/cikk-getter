@@ -1,0 +1,11 @@
+{
+  "type": "service_account",
+  "project_id": "github-actions-ci",
+  "private_key_id": "43aa5c0c8ed9bb238ecd18a08fe9060e0c88da16",
+  "client_email": "github-actions@github-actions-ci.iam.gserviceaccount.com",
+  "client_id": "118094184587534383070",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/github-actions%40github-actions-ci.iam.gserviceaccount.com"
+}
