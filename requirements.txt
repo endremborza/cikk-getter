@@ -1,5 +1,6 @@
 gspread
 oauth2client
 beautifulsoup4
+html5lib
 requests
 python-dotenv
