@@ -24,5 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Execute update
+      env:
+        GSPREAD_PRIVATE_KEY: ${{ secrets.GS_PRIVATE_KEY }}
       run: |
         python cikk_getter.py
