@@ -31,7 +31,7 @@ jobs:
         python cikk_getter.py
     - name: Update Dashboard
       env:
-        GSHEETS_PRIVATE_KEY: ${{ secrets.GSHEETS_PRIVATE_KEY }}
+        GSPREAD_PRIVATE_KEY: ${{ secrets.GS_PRIVATE_KEY }}
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         python make_dashboard.py
