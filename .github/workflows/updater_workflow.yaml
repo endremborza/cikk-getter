@@ -1,4 +1,4 @@
-name: "Update news table workflow"
+name: "Update news table and dashboard"
 
 on:
   push:
@@ -23,8 +23,22 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Execute update
+    - name: Update sheet
+      if: github.event_name == 'schedule'
       env:
         GSPREAD_PRIVATE_KEY: ${{ secrets.GS_PRIVATE_KEY }}
       run: |
         python cikk_getter.py
+    - name: Update Dashboard
+      env:
+        GSHEETS_PRIVATE_KEY: ${{ secrets.GSHEETS_PRIVATE_KEY }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        python make_dashboard.py
+        git config --global user.email "gh-actions@github.com"
+        git config --global user.name "github actions"
+        git add docs
+        git commit --message "github actions dashboard build"
+        git remote add origin-pages https://${GH_TOKEN}@github.com/endremborza/cikk-getter.git > /dev/null 2>&1
+        git push --quiet origin-pages HEAD:master
+
