@@ -1,9 +1,6 @@
 name: "Update news table and dashboard"
 
 on:
-  push:
-    branches:
-      - master
 
   schedule:
     - cron:  '0 */4 * * *'
@@ -24,7 +21,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Update sheet
-      if: github.event_name == 'schedule'
       env:
         GSPREAD_PRIVATE_KEY: ${{ secrets.GS_PRIVATE_KEY }}
       run: |
